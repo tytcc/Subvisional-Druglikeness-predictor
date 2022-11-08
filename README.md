@@ -30,7 +30,7 @@ where <train_data> is the path to a CSV file containing training data, <test_dat
 For example:
 
 ```python
-python train.py --data_path ../datasets/market_approvability_train.csv --dataset_type classification --save_dir ../pipeline/market-approvability_test --epochs 50  --s ../results/test_s --mode normal --target_columns label
+python train.py --data_path ../datasets/market_approvability_train.csv --separate_test_path ../datasets/market_approvability_test.csv --dataset_type classification --save_dir ../pipeline/market-approvability_test --epochs 50  --s ../results/test_s --mode normal --target_columns label
 ```
 
 
@@ -47,7 +47,7 @@ where <test_data> is the path to a CSV file containing test data, <model_path> i
 For example:
 
 ```python
-python predict.py --data_path ../datasets/market_approvability_train.csv --dataset_type classification --save_dir ../pipeline/market-approvability --s ../results/predict_s --mode normal --target_columns label --outputfile output
+python predict.py --data_path ../datasets/market_approvability_train.csv --separate_test_path ../datasets/market_approvability_test.csv --dataset_type classification --save_dir ../pipeline/market-approvability --s ../results/predict_s --mode normal --target_columns label --outputfile output
 ```
 
 
@@ -63,7 +63,7 @@ where <train_data> is the path to a CSV file containing training data, <test_dat
 For example:
 
 ```python
-python al_ensemble.py --data_path ../datasets/market_approvability_train.csv --dataset_type classification --save_dir ../pipeline/market-approvability --s ../results/al_ensemble_s --mode active --start_iter 11 --end_iter 16
+python al_ensemble.py --data_path ../datasets/market_approvability_train.csv --separate_test_path ../datasets/market_approvability_test.csv --dataset_type classification --save_dir ../pipeline/market-approvability --s ../results/al_ensemble_s --mode active --start_iter 11 --end_iter 16
 ```
 
 
