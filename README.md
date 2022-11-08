@@ -2,7 +2,7 @@
 
 This repository contains code used in paper [miDruglikeness](http)
 
-The webserver is availability in [miDruglikeness](http://pkumdl.cn:8000/midruglikeness)
+The webserver is available at [miDruglikeness](http://pkumdl.cn:8000/midruglikeness)
 
 ## Requirements
 
