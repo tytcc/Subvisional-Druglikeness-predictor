@@ -1,6 +1,6 @@
-# Subdivisional Druglikeness predictor
+# miDruglikeness 
 
-This repository contains code used in paper [Subdivisional-Druglikeness predictor](http)
+This repository contains code used in paper [miDruglikeness](http)
 
 ## Requirements
 
@@ -28,7 +28,7 @@ where <train_data> is the path to a CSV file containing training data, <test_dat
 For example:
 
 ```python
-python train.py --data_path ../datasets/worldaintrials_KNIME_rmnu_06-03_train.csv --dataset_type classification --save_dir ../pipeline/market-approvability_test --epochs 50 --features_path ../datasets/worldaintrials_KNIME_rmnu_06-03_train_rdkit_2d_normalized.npy --separate_test_path ../datasets/worldaintrials_KNIME_rmnu_06-03_test.csv --separate_test_features_path ../datasets/worldaintrials_KNIME_rmnu_06-03_test_rdkit_2d_normalized.npy --no_features_scaling --metric auc --init_lr 5e-4 --max_lr 5e-4 --final_lr 5e-4 --s ../results/test_s --mode normal --depth 2 --hidden_size 300 --ffn_num_layer 2 --target_columns label
+python train.py --data_path ../datasets/worldaintrials_KNIME_rmnu_06-03_train.csv --dataset_type classification --save_dir ../pipeline/market-approvability_test --epochs 50  --s ../results/test_s --mode normal --target_columns label
 ```
 
 
@@ -45,7 +45,7 @@ where <test_data> is the path to a CSV file containing test data, <model_path> i
 For example:
 
 ```python
-python predict.py --data_path ../datasets/worldaintrials_KNIME_rmnu_06-03_train.csv --dataset_type classification --save_dir ../pipeline/market-approvability --epochs 50 --features_path ../datasets/worldaintrials_KNIME_rmnu_06-03_train_rdkit_2d_normalized.npy --separate_test_path ../datasets/worldaintrials_KNIME_rmnu_06-03_test.csv --separate_test_features_path ../datasets/worldaintrials_KNIME_rmnu_06-03_test_rdkit_2d_normalized.npy --no_features_scaling --metric auc --init_lr 5e-4 --max_lr 5e-4 --final_lr 5e-4 --s ../results/predict_s --mode normal --depth 2 --hidden_size 300 --ffn_num_layer 2 --target_columns label --outputfile output
+python predict.py --data_path ../datasets/worldaintrials_KNIME_rmnu_06-03_train.csv --dataset_type classification --save_dir ../pipeline/market-approvability --s ../results/predict_s --mode normal --target_columns label --outputfile output
 ```
 
 
@@ -61,7 +61,7 @@ where <train_data> is the path to a CSV file containing training data, <test_dat
 For example:
 
 ```python
-python al_ensemble.py --data_path ../datasets/worldaintrials_KNIME_rmnu_06-03_train.csv --dataset_type classification --save_dir ../pipeline/market-approvability --epochs 50 --features_path ../datasets/worldaintrials_KNIME_rmnu_06-03_train_rdkit_2d_normalized.npy --separate_test_path ../datasets/worldaintrials_KNIME_rmnu_06-03_test.csv --separate_test_features_path ../datasets/worldaintrials_KNIME_rmnu_06-03_test_rdkit_2d_normalized.npy --no_features_scaling --metric auc --init_lr 5e-4 --max_lr 5e-4 --final_lr 5e-4 --s ../results/al_ensemble_s --mode normal --depth 2 --hidden_size 300 --ffn_num_layer 2 --target_columns label --start_iter 11 --end_iter 16
+python al_ensemble.py --data_path ../datasets/worldaintrials_KNIME_rmnu_06-03_train.csv --dataset_type classification --save_dir ../pipeline/market-approvability --s ../results/al_ensemble_s --mode active --start_iter 11 --end_iter 16
 ```
 
 
